@@ -10,11 +10,11 @@ def main():
     print(welcome_message(book_path))
     print(f"{num_words} words found in the document")
     print()
-
+    # Here the ordered list is printed, only the letters are printed
     for item in chars_sorted_list:
         if not item["char"].isalpha():
             continue
-        print(f"The {item['char']} character was found {item['num']} times")
+        print(f"The '{item['char']}' character was found {item['num']} times")
 
     print("--- End report ---")
 
@@ -31,7 +31,7 @@ def get_book_text(book_path):
         return f.read()
     
 def count_characters(text):
-# count the characters and order the list
+# count the characters
     lower_text = text.lower()
     char_dictionary = {}
     for char in lower_text:
@@ -46,7 +46,7 @@ def count_characters(text):
 
 def sort_on(d):
     return d["num"]
-
+# make a list out of the dictionary holding the char and the count of the char
 def chars_dict_to_sorted_list(num_chars_dict):
     sorted_list = []
     for ch in num_chars_dict:
